@@ -1,0 +1,140 @@
+<p> Products</p>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                margin: 5px;
+                border: 1px solid black;
+            }
+
+            #main-content {
+                background: greenyellow;
+            }
+
+            #main-content::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+
+            #left-column {
+                float: left;
+                width: 20%;
+            }
+
+            #right-column {
+                float: left;
+                width: 78%;
+                background: honeydew;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+            
+            .product {
+                padding: 5px;
+                float: left;
+                width: 20%;
+            }
+            
+            .product img {
+                width: 100%;
+                height: auto;
+            }
+
+            .product_name {
+                text-align: center;
+            }
+
+            .product_price {
+                text-align: center;
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="header">This is header.</div>
+        <div id="menu">This is menu.</div>
+
+        <div id="main-content">
+            <div id="left-column">This is left.</div>
+            
+            <div id="right-column">
+                <div class="product">
+                    <img src="https://41zfam1pstr03my3b22ztkze-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/How-This-Eagle-Scout-with-Special-Needs-Found-His-Community-in-Scouting-975x650.jpg" alt="Boy Scout 01">
+                    
+                    <h3 class="product_name">Name HTML</h3>
+                    <p class="product_price">100.000 VND</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">This is footer.</div>
+
+        <script>
+            var product = [
+                            {
+                                "Image" : "https://41zfam1pstr03my3b22ztkze-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/How-This-Eagle-Scout-with-Special-Needs-Found-His-Community-in-Scouting-975x650.jpg",
+                                "Name" : "Name JS 01",
+                                "Price" : "100.000"
+                            },
+                            {
+                                "Image" : "https://41zfam1pstr03my3b22ztkze-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/How-This-Eagle-Scout-with-Special-Needs-Found-His-Community-in-Scouting-975x650.jpg",
+                                "Name" : "Name JS 02",
+                                "Price" : "100.000"
+                            },
+                            {
+                                "Image" : "https://41zfam1pstr03my3b22ztkze-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/How-This-Eagle-Scout-with-Special-Needs-Found-His-Community-in-Scouting-975x650.jpg",
+                                "Name" : "Name JS 03",
+                                "Price" : "100.000"
+                            },
+                            {
+                                "Image" : "https://41zfam1pstr03my3b22ztkze-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/How-This-Eagle-Scout-with-Special-Needs-Found-His-Community-in-Scouting-975x650.jpg",
+                                "Name" : "Name JS 04",
+                                "Price" : "100.000"
+                            },
+                            {
+                                "Image" : "https://41zfam1pstr03my3b22ztkze-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/How-This-Eagle-Scout-with-Special-Needs-Found-His-Community-in-Scouting-975x650.jpg",
+                                "Name" : "Name JS 05",
+                                "Price" : "100.000"
+                            },
+                            {
+                                "Image" : "https://41zfam1pstr03my3b22ztkze-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/How-This-Eagle-Scout-with-Special-Needs-Found-His-Community-in-Scouting-975x650.jpg",
+                                "Name" : "Name JS 06",
+                                "Price" : "100.000"
+                            },
+                            {
+                                "Image" : "https://41zfam1pstr03my3b22ztkze-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/How-This-Eagle-Scout-with-Special-Needs-Found-His-Community-in-Scouting-975x650.jpg",
+                                "Name" : "Name JS 07",
+                                "Price" : "100.000"
+                            }
+                        ];
+
+            for(var i = 0; i < product.length; ++i) {
+                var product_div = document.createElement('div');
+                product_div.classList.add('product');
+
+                var product_img = document.createElement('img');
+                product_img.src = product[i].Image;
+
+                var product_h3 = document.createElement('h3');
+                product_h3.classList.add('product_name');
+                product_h3.appendChild(document.createTextNode(product[i].Name));
+
+                var product_p = document.createElement('p');
+                product_p.classList.add('product_price');
+                product_p.appendChild(document.createTextNode(product[i].Price));
+
+                product_div.appendChild(product_img);
+                product_div.appendChild(product_h3);
+                product_div.appendChild(product_p);
+
+                document.getElementById('right-column').appendChild(product_div);
+            }
+        </script>
+    </body>
+</html>
